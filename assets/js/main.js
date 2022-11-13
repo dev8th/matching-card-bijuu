@@ -148,7 +148,7 @@
                             //Konfigurasi Kembali ke Awal
                             resetConfig();
 
-                        },100);
+                        },300);
 
                         falsePick++;
 
@@ -195,7 +195,7 @@
                 screen.style.visibility = "visible";
                 title.innerHTML = "Permainan Selesai";
                 play.innerHTML = "Main Lagi";
-                stat.innerHTML ="<div>Time : "+time+" s</div><div>Wrong Moves : "+falsePick+"</div>";
+                stat.innerHTML ="<div>Time : "+time+" Detik</div><div>Kesalahan : "+falsePick+"X</div>";
             }
 
         }
