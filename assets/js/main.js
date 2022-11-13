@@ -1,8 +1,10 @@
+        let pair = 2;
+        let backgroundSuccess = "green";
+        let backgroundDefault = "white";
         let randomNum = "";
         let pair1 = "";
         let pair2 = "";
         let totalPair = 0;
-        let pair = 2;
         let pairArray = [];
         let numWhile = 0;
         let stillGoing = 0;
@@ -97,6 +99,7 @@
                 //Jika Kartu Belum Terbuka
                 kotak.classList.remove("kotak-unflip");
                 kotak.classList.add("kotak-flip");
+                kotak.style.backgroundColor=backgroundSuccess;
                 kotak.innerHTML=configuration[0][kotak.getAttribute("data")];
 
                 //Jika Kartu Terbuka Adalah Pasangan Awal
@@ -145,7 +148,7 @@
                         for(var i=0;i<pairArray.length;i++){
                                 
                                 //Ganti Backgroundnnya Menjadi Hijau
-                                pairArray[i].style.backgroundColor="green";
+                                pairArray[i].style.backgroundColor=backgroundSuccess;
                             
                         }
 
