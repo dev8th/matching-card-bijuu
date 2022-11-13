@@ -49,13 +49,24 @@ body{
 .kotak{
     color:white;
     font-size:30px;
-    background: linear-gradient(90deg,rgb(247, 213, 22)0%,hsla(35, 100%, 50%, 1)100%);
     width:100px;
     height: 100px;
     border:1px solid black;
     display:flex;
     justify-content: center;
     align-items: center;
+}
+
+.default-white{
+    background: white;
+}
+
+.default-success{
+    background: green;
+}
+
+.default-yellow{
+    background: linear-gradient(90deg,rgb(247, 213, 22)0%,hsla(35, 100%, 50%, 1)100%);
 }
 
 .kotak-unflip{

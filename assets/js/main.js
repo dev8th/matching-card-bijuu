@@ -33,6 +33,10 @@
         play.addEventListener("click",startPlay);
 
         function startPlay(){
+            configuration[1]=[0,0,0,0,0,0,0,0,0,0];
+            totalPair=0;
+            falsePick=0;
+            time=0;
             resetConfig();
             factorySetting();
             setInterval(function(){
@@ -50,7 +54,10 @@
             Object.keys(kotak).forEach(element => {
 
                 kotak[element].classList.remove("kotak-flip");
-                kotak[element].classList.add("kotak-unflip");
+                kotak[element].classList.add("kotak-unflip");                
+                kotak[element].classList.remove("default-white");
+                kotak[element].classList.remove("default-success");
+                kotak[element].classList.add("default-yellow");
 
                 //Proses Pengulangan Menentukan Nilai Random
                 while(numWhile==0){
@@ -69,8 +76,7 @@
                     }
                 }
 
-                // //Set Data Dengan Nilai Random
-                // kotak[element].removeAttribute("data");
+                //Set Data Dengan Nilai Random
                 kotak[element].setAttribute("data",randomNum);
 
                 //Set Gambar Belakang Kartu
@@ -98,8 +104,10 @@
 
                 //Jika Kartu Belum Terbuka
                 kotak.classList.remove("kotak-unflip");
-                kotak.classList.add("kotak-flip");
-                kotak.style.backgroundColor=backgroundSuccess;
+                kotak.classList.add("kotak-flip");                
+                kotak.classList.remove("default-yellow");
+                kotak.classList.remove("default-success");
+                kotak.classList.add("default-white");
                 kotak.innerHTML=configuration[0][kotak.getAttribute("data")];
 
                 //Jika Kartu Terbuka Adalah Pasangan Awal
@@ -130,6 +138,9 @@
                                 
                                     pairArray[i].classList.remove("kotak-flip");
                                     pairArray[i].classList.add("kotak-unflip");
+                                    pairArray[i].classList.remove("default-white");
+                                    pairArray[i].classList.remove("default-success");
+                                    pairArray[i].classList.add("default-yellow");
                                     pairArray[i].innerHTML = "<img src='assets/pic/0.png'>";
                                 
                             }
@@ -148,7 +159,9 @@
                         for(var i=0;i<pairArray.length;i++){
                                 
                                 //Ganti Backgroundnnya Menjadi Hijau
-                                pairArray[i].style.backgroundColor=backgroundSuccess;
+                                pairArray[i].classList.remove("default-white");
+                                pairArray[i].classList.remove("default-yellow");
+                                pairArray[i].classList.add("default-success");
                             
                         }
 
@@ -172,17 +185,17 @@
             pair2="";
             pairArray=[];
             stillGoing=0;
-            configuration[1]=[0,0,0,0,0,0,0,0,0,0];
         }
 
         function gameOver(totalPair){
+
+            console.log(totalPair);
 
             if(totalPair==kotak.length/pair){
                 screen.style.visibility = "visible";
                 title.innerHTML = "Permainan Selesai";
                 play.innerHTML = "Main Lagi";
                 stat.innerHTML ="<div>Time : "+time+" s</div><div>Wrong Moves : "+falsePick+"</div>";
-                totalPair=0;
             }
 
         }
