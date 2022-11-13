@@ -1,15 +1,14 @@
         let pair = 2;
         let backgroundSuccess = "green";
         let backgroundDefault = "white";
-        let randomNum = "";
-        let pair1 = "";
-        let pair2 = "";
-        let totalPair = 0;
-        let pairArray = [];
+        let waktuBerjalan;
+        let randomNum,pair1,pair2 = "";
+        let time = 0;
         let numWhile = 0;
+        let totalPair = 0;
         let stillGoing = 0;
         let falsePick = 0;
-        let time = 0;
+        let pairArray = [];
         let configuration = [
             [
                 "<img src='assets/pic/1.png' />",
@@ -39,8 +38,8 @@
             time=0;
             resetConfig();
             factorySetting();
-            setInterval(function(){
-                time++;
+            waktuBerjalan = setInterval(function(){
+                time+=1;
             },1000);
         }
         
@@ -196,6 +195,7 @@
                 title.innerHTML = "Permainan Selesai";
                 play.innerHTML = "Main Lagi";
                 stat.innerHTML ="<div>Waktu : "+time+" Detik</div><div>Kesalahan : "+falsePick+"x</div>";
+                clearInterval(waktuBerjalan);
             }
 
         }
