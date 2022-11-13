@@ -195,7 +195,7 @@
                 screen.style.visibility = "visible";
                 title.innerHTML = "Permainan Selesai";
                 play.innerHTML = "Main Lagi";
-                stat.innerHTML ="<div>Time : "+time+" Detik</div><div>Kesalahan : "+falsePick+"X</div>";
+                stat.innerHTML ="<div>Waktu : "+time+" Detik</div><div>Kesalahan : "+falsePick+"x</div>";
             }
 
         }
